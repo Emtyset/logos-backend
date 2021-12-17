@@ -1,0 +1,60 @@
+.exercise-full {
+    width: 70%;
+    background-color: #9DF3C4;
+    height: 80vh;
+    border-radius: 20px;
+    margin: 0 .5rem;
+    padding: 1rem;
+    position: relative;
+}
+
+.exercise-full p {
+    font-size: large;
+}
+
+.button-group {
+    display: flex;
+    justify-content : center;
+    align-items: center;
+    padding: 0rem 1rem;
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+}
+
+.button-group div {
+    width:33%;
+    display: inline-block;
+}
+
+.button-group div div, button {
+    display: block;
+    margin: auto;
+}
+
+.button-group div button {
+    border: none;
+    background-color: transparent;
+}
+
+.arrow {
+    width: 142px !important;
+    height: 142px !important;
+}
+
+#timer {
+    width: 235px;
+    height: 235px;
+    background-color: #D7FBE8;
+    border-radius: 50%;
+    border: 5px solid #1FAB89;
+    display: table; 
+}
+
+#timer p {
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    font-size: 80px;
+    color: #1FAB89;
+}
