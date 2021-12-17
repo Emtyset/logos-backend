@@ -1,0 +1,16 @@
+#timer {
+    width: 235px;
+    height: 235px;
+    background-color: #D7FBE8;
+    border-radius: 50%;
+    border: 5px solid #1FAB89;
+    display: table; 
+}
+
+#timer p {
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    font-size: 80px;
+    color: #1FAB89;
+}
