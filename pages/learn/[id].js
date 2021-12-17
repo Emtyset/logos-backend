@@ -6,10 +6,10 @@ import exercises from "../../dataExample";
 
 export default function ExercisePage() {
     return <>
-        <div style={{display: 'flex'}}>
+        <div className='header-part'>
             <Header />
         </div>
-        <div style={{display:'flex'}}>
+        <div className='exercise-part'>
             <ExerciseList exercises={exercises}/>
             <ExerciseFull />
         </div>

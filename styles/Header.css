@@ -1,3 +1,10 @@
+@media screen and (max-width: 1024px) {
+    .header-list{
+        font-size: 14pt;
+    }
+
+}
+
 .header {
     display: flex;
     flex-grow: 1;
@@ -11,18 +18,16 @@
     background-color: #1FAB89;
 }
 
-.logo {
+.header__logo{
     color: #FFFFFF;
     padding: 0 0 0 0;
     margin-left: 2%;
     font-size: 46pt;
-}
-.logo a{
     color: #FFFFFF;
     text-decoration: none;
 }
 
-.header-list{
+.header__navbar{
     text-transform: uppercase;
     font-weight: bold;
     font-size: 28pt;
@@ -33,19 +38,12 @@
     justify-content: space-between;
 }
 
-@media screen and (max-width: 1024px) {
-    .header-list{
-        font-size: 14pt;
-    }
-
-}
-
-.header-list a{
+.header__list-elem{
     color:white;
     text-decoration: none;
 }
 
-.user-icon{
+.header__user-icon{
     display: block;
     /* grid-area: user-icon; */
     size: 20px;
