@@ -1,14 +1,14 @@
 function ExerciseItem({ exercise }) {
     return (
-        <li className='exercise-item'> 
+        <li className='exercise-list__exercise-item'> 
             {exercise.title}<br/>
 
-            <span className = "exText">
+            <span className = "exercise-list__exercise-item-text">
                 {exercise.text}
                 <br/><br/>
             </span>
 
-            <span className = "exTime">
+            <span className = "exercise-list__exercise-item-time">
                 {'≤ ' + exercise.time + ' sec'}
             </span>
         </li>

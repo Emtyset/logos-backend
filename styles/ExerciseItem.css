@@ -1,4 +1,4 @@
-.exercise-item {
+.exercise-list__exercise-item {
     position: relative;
     height: auto;
     padding: 1rem 1rem .7rem 1rem; 
@@ -10,14 +10,14 @@
     font-weight: 'bolder';
 }
 
-.exText {
+.exercise-list__exercise-item-text {
     margin-left:30px;
     font-weight: normal;
   }
   
-  .exTime {
+.exercise-list__exercise-item-time {
     position: absolute;
     right: 30px;
     bottom: 10px;
-  }
+}
   
