@@ -8,11 +8,11 @@
     position: relative;
 }
 
-.exercise-full p {
+.exercise-full__p {
     font-size: large;
 }
 
-.button-group {
+.exercise-full__button-group {
     display: flex;
     justify-content : center;
     align-items: center;
@@ -22,22 +22,19 @@
     width: 100%;
 }
 
-.button-group div {
+.exercise-full__button-wrapper{
     width:33%;
     display: inline-block;
 }
 
-.button-group div div, button {
+/* .exercise-full__button-group div div, button {
     display: block;
     margin: auto;
-}
+} */
 
-.button-group div button {
+.exercise-full__button{
     border: none;
+    display: block;
+    margin: auto;
     background-color: transparent;
-}
-
-.arrow {
-    width: 142px !important;
-    height: 142px !important;
 }

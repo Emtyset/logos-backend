@@ -18,8 +18,8 @@ function Timer({timeGiven, autoStart}) {
     
     let firstStart = true
     return (
-      <div id='timer' onClick={isRunning? pause : resume}>
-        <p>{seconds + minutes * 60}s</p>
+      <div className='timer' onClick={isRunning? pause : resume}>
+        <p className='timer-seconds'>{seconds + minutes * 60}s</p>
       </div>
     );
   }
