@@ -10,8 +10,8 @@ export default function ExerciseFull() {
     let exercise = exercises[idEx]
     return (
         <div className='exercise-full'>
-            <h1 class='exercise-full__header'>{exercise.title}</h1>
-            <p class='exercise-full__p'>{exercise.text}</p>
+            <h1 className='exercise-full__header'>{exercise.title}</h1>
+            <p className='exercise-full__p'>{exercise.text}</p>
             <div className='exercise-full__button-group'>
                 <div className='exercise-full__button-wrapper'>{idEx > 0 ? 
                     <button className='exercise-full__button' onClick={() => setIdEx(idEx - 1)}><Image src={LeftArrowSVG} className='arrow' width={142} height={142}/></button> 
