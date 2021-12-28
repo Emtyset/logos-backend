@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import exercises from "../dataExample";
 import RightArrowSVG from '../public/arrow-circle-right.svg';
 import LeftArrowSVG from '../public/arrow-circle-left.svg';
@@ -8,6 +8,21 @@ import Timer from "./Timer"
 export default function ExerciseFull() {
     let [idEx, setIdEx] = useState(0)
     let exercise = exercises[idEx]
+    let [time, setTime] = useState(exercises[idEx].time)
+
+    useEffect(() => {
+        setTime(exercises[idEx].time)
+    }, [idEx])
+
+    useEffect(() => {
+        let timer = setTimeout(() => {
+            setTime(time - 1)
+        }, 1000)
+        return () => {
+            clearTimeout(timer)
+        }
+    }, [time])
+
     return (
         <div className='exercise-full'>
             <h1 className='exercise-full__header'>{exercise.title}</h1>
@@ -17,7 +32,8 @@ export default function ExerciseFull() {
                     <button className='exercise-full__button' onClick={() => setIdEx(idEx - 1)}><Image src={LeftArrowSVG} className='arrow' width={142} height={142}/></button> 
                     : null}
                 </div>
-                <Timer timeGiven={exercise.time} autoStart={false}/>
+                {/* <Timer timeGiven={time} autoStart={false}/> */}
+                <div className='timer'><div className='timer-seconds'>{time}</div></div>
                 <div className='exercise-full__button-wrapper'>{idEx < exercises.length - 1 ? 
                     <button className='exercise-full__button' onClick={() => setIdEx(idEx + 1)}><Image src={RightArrowSVG}  className='arrow' width={142} height={142}/></button> 
                     : null}
