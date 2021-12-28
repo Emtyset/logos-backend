@@ -16,7 +16,12 @@ export default function ExerciseFull() {
 
     useEffect(() => {
         let timer = setTimeout(() => {
-            setTime(time - 1)
+            if (time) {
+                setTime(time - 1)
+            }
+            else {
+                clearTimeout(timer)
+            }
         }, 1000)
         return () => {
             clearTimeout(timer)
