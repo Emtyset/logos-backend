@@ -3,7 +3,6 @@ import exercises from "../dataExample";
 import RightArrowSVG from '../public/arrow-circle-right.svg';
 import LeftArrowSVG from '../public/arrow-circle-left.svg';
 import Image from "next/image";
-import Timer from "./Timer"
 
 export default function ExerciseFull() {
     let [idEx, setIdEx] = useState(0)
