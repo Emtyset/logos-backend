@@ -1,0 +1,37 @@
+@import '../defaults';
+
+@mixin exercise_list__exercise_item {
+    list-style: none;
+    position: relative;
+    height: 100px;
+    padding: 1rem 1rem .7rem 1rem; 
+    border-radius: 20px;
+    margin: 0.5rem 1rem;
+    background-color: $third-primary-color;
+    border: 5px solid $third-primary-color;
+}
+
+.exercise_list__exercise_item {
+    @include exercise_list__exercise_item;
+}
+
+.exercise_list__exercise_item_chosen {
+    @include exercise_list__exercise_item;
+    border-color: $primary-color;
+}
+
+.exercise_list__exercise_item_header {
+    @include font-h6;
+}
+
+.exercise_list__exercise_item_text {
+    @include font-body1;
+    margin-left:30px;
+}
+
+.exercise_list__exercise_item_time {
+    @include font-body2;
+    position: absolute;
+    right: 30px;
+    bottom: 10px;
+}

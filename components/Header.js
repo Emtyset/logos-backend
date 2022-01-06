@@ -1,17 +1,23 @@
 import Link from 'next/link'
-import Image from 'next/image'
-import userIcon from '../public/user.svg'
+import styles from '../styles/Header.module.scss'
 
-export default function Header(){
-    return (
-        <header className='header'>
-            <h1 className='header__logo'>λόγος</h1>
-            <nav className='header__navbar'>
-                <Link href="/"><a className='header__list-elem'>Обучение</a></Link>
-                <Link href="/"><a className='header__list-elem'>Справка</a></Link>
-                <Link href="/"><a className='header__list-elem'>База заданий</a></Link>
+
+// https://dev.to/javascriptacademy/responsive-navigation-bar-with-mobile-menu-using-html-css-2hpd
+export default function Header() {
+    return <>
+        <header className={styles.header}>
+            <div className={styles.header__logo}>
+                <Link href="/"><a>λόγος</a></Link>
+            </div>
+            <nav className={styles.header__nav}>
+                <ul className={styles.header__list}>
+                    <li  className={styles.header__list_elem}><Link href="/"><a>Справка</a></Link></li>
+                    <li  className={styles.header__list_elem}><Link href="/"><a>База заданий</a></Link></li>
+                    <li  className={styles.header__list_elem}><Link href="/"><a>Обучение</a></Link></li>
+                    <li  className={styles.header__list_elem_login}><Link href="/"><a>Войти</a></Link></li>
+                    <li  className={styles.header__list_elem_signup}><Link href="/"><a>Регистрация</a></Link></li>
+                </ul>
             </nav>
-            <Image className='header__user-icon' src={userIcon} alt='user'></Image>
         </header>
-    )
+    </>
 }

@@ -1,13 +1,12 @@
-import '../styles/App.css'
-import '../styles/Header.css'
-import '../styles/ExerciseItem.css'
-import '../styles/ExerciseList.css'
-import '../styles/ExerciseFull.css'
-import '../styles/ExercisePage.css'
-import '../styles/Timer.css'
+import '../styles/app.scss'
+import Header from '../components/Header'
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+
+// https://nextjs.org/docs/basic-features/layouts
+export default function LogosApp( {Component, pageProps }) {
+    return <>
+        <Header />
+        <Component {...pageProps} />
+    </>
+
 }
-
-export default MyApp

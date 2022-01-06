@@ -1,0 +1,65 @@
+@import './defaults';
+
+.header {
+    @include header-font;
+    box-sizing: border-box;
+    padding: 0 20px;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    background-color: $primary-color;
+    a {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+.header__logo {
+    @include logo-font;
+    display: flex;
+    align-items: center;
+    a:hover {
+        color: $second-primary-color;
+        transition: 0.3s;
+    }
+}
+
+.header__list{
+    list-style: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    justify-content: space-around;
+    a {
+        color: white;
+    }
+}
+
+.header__list_elem, .header__list_elem_login, .header__list_elem_signup {
+    padding: 5px;
+    margin-left: 10px;
+    a:hover {
+        color: $second-primary-color;
+        transition: 0.3s;
+    }
+}
+
+// .header__list_elem_login, .header__list_elem_signup {
+//   border-radius: 5px;
+//   padding: 5px 8px;
+// }
+
+// .header__list_elem_login {
+//   border: 1px solid #498afb;
+//   a {
+//     color: #498afb;
+//   }
+// }
+
+// .header__list_elem_signup {
+//   border: 1px solid #ff3860;
+//   a {
+//     color: #ff3860;
+//   }
+// }

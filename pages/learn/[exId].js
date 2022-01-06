@@ -1,36 +1,21 @@
-import Header from "../../components/Header";
-import ExerciseList from "../../components/ExerciseList";
-import ExerciseFull from "../../components/ExerciseFull";
+import ExerciseList from '../../components/Exercise/ExerciseList'
 import { connectToDatabase } from "../../utils/mongodb"
+
 
 export default function ExercisePage({ exercises }) {
     return <>
-        <div className='header-part'>
-            <Header />
-        </div>
         <div className='exercise-part'>
             <ExerciseList exercises={exercises} />
-            <ExerciseFull />
         </div>
     </>
 }
 
 export async function getStaticProps() {
-
     const { db } = await connectToDatabase();
     const exercises = await db
         .collection("exercises")
         .find({})
         .toArray();
-
-    // const exercises = await new Promise(() => {
-    //     setTimeout(() => console.log("Data is ready"), 3000)
-    // }).then(() => {
-    //     return db
-    //     .collection("exercises")
-    //     .find({})
-    //     .toArray()
-    // })
 
     return {
         props: {
@@ -45,4 +30,3 @@ export async function getStaticPaths() {
         fallback: true
     }
 }
-

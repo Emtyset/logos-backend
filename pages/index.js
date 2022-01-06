@@ -1,5 +1,7 @@
-export default function Index() {
-  return <>
-    <h1>Hello World!</h1>
-  </>
+import styles from '../styles/Header.module.scss'
+
+export default function LandingPage() {
+    return <>
+        
+    </>
 }
