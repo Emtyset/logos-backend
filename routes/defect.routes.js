@@ -4,7 +4,7 @@ const Defect = require("../models/Defect")
 
 
 // DON'T RUN IT ANYMORE
-router.get("/addAll", async (req, res) => {
+router.get("/add-all", async (req, res) => {
     try {
         const defects = Defect.create([
             {
@@ -33,6 +33,15 @@ router.get("/addAll", async (req, res) => {
             }
         ])
         res.json("Done")
+    } catch (err) {
+        console.error(err)
+    }
+})
+
+router.get("/get-all", async (req, res) => {
+    try {
+        const defectOptions = await Defect.find()
+        res.json({defectOptions})
     } catch (err) {
         console.error(err)
     }

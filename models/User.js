@@ -25,8 +25,15 @@ const UserSchema = new Schema({
                 ref: 'Exercise'
             }],
             default: []
-        }
-    })
+        },
+    defects: {
+        type: [{
+            type: Schema.Types.ObjectId,
+            ref: 'Defect'
+        }],
+        default: []
+    }
+})
 
 UserSchema.pre('save', function (next) {
     var user = this
@@ -81,6 +88,14 @@ UserSchema.methods.pushToday = function () {
         }
     } else {
         this.sessions = [now]
+    }
+}
+
+UserSchema.methods.pushDoneExercise = function(exerciseId) {
+    if (this.doneExercises) {
+        this.doneExercises.push(exerciseId)
+    } else {
+        this.doneExercises = [exerciseId]
     }
 }
 

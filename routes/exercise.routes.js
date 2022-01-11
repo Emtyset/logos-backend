@@ -2,7 +2,7 @@ const {Router} = require('express')
 const router = Router()
 const Exercise = require("../models/Exercise")
 
-router.get('/getOneSession', async (req, res) => {
+router.get('/get-session', async (req, res) => {
     try {
         let [intro] = await Exercise.aggregate([
             {$match: {order: 0}},
