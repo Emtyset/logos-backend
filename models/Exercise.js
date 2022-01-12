@@ -21,10 +21,10 @@ const ExerciseSchema = new Schema({
         max: 300,
         required: true
     }, //... add defect
-    defectType: [{
+    defect: {
         type: Schema.Types.ObjectId,
         ref: 'Defect'
-    }]
+    }
 })
 
 module.exports = mongoose.models.Exercise || mongoose.model('Exercise', ExerciseSchema)

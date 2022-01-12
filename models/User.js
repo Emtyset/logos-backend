@@ -93,7 +93,8 @@ UserSchema.methods.pushToday = function () {
 
 UserSchema.methods.pushDoneExercise = function(exerciseId) {
     if (this.doneExercises) {
-        this.doneExercises.push(exerciseId)
+        if (!this.doneExercises.includes(exerciseId))
+            this.doneExercises.push(exerciseId)
     } else {
         this.doneExercises = [exerciseId]
     }
