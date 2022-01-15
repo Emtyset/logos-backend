@@ -85,9 +85,7 @@ router.get('/:username/session-dates/:N', async (req, res) => {
         let t = new Date();
         let d = new Date(Date.UTC(t.getFullYear(), t.getMonth(), t.getDate() - N));
         res.json({
-            sessions: prepareJSON(lastNsessions.filter(item => new Date(item) >= d).sort((a, b) => a - b)),
-            totalSessions: user.totalTrainings,
-            joined: prepareJSON([user.joined])[0]
+            sessions: lastNsessions.filter(item => new Date(item) >= d).sort((a, b) => a - b),
         })
     } catch (err) {
         console.error(err)
@@ -102,6 +100,26 @@ router.get("/:username/get-exercises", async (req, res) => {
         console.log(exercises)
         res.json({
             "exerciseIds" : exercises
+        })
+    } catch (err) {
+        console.error(err)
+    }
+})
+
+router.get("/:username", async (req, res) => {
+    try {
+        const {username} = req.params
+        const user = await User.findOne({"username": username}, {"password": 0, "__v": 0, "role": 0})
+        user 
+        res.json({
+            // "user" : user.toJSON({virtuals: true, "password": 0, "sessions": false, "doneExercises": 0})
+            "user": {
+                "username" : user.username,
+                "joined": user.joined,
+                "totalTrainings": user.totalTrainings,
+                "lastTraining": user.lastTraining,
+                "totalExercises": user.doneExercises.length
+            }
         })
     } catch (err) {
         console.error(err)
